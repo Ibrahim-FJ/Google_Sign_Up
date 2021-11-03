@@ -13,30 +13,33 @@
         android:layout_width="131dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/google_logo" />
+        app:srcCompat="@drawable/google_logo"/>
 
     <TextView
         android:id="@+id/creatAccountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Create your Google Account"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/create_your_google_account_textView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstname"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
         android:hint="@string/first_name"
         app:layout_constraintEnd_toStartOf="@+id/lastName"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline"
         app:layout_constraintTop_toBottomOf="@+id/creatAccountTextView"
         tools:ignore="SpeakableTextPresentCheck">
 
@@ -52,13 +55,13 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lastName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:hint="@string/last_name"
         app:layout_constraintBottom_toBottomOf="@+id/firstname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/end_vertical_guidline"
         app:layout_constraintStart_toEndOf="@+id/firstname"
         app:layout_constraintTop_toTopOf="@+id/firstname"
         app:layout_constraintVertical_bias="1.0"
@@ -76,18 +79,21 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="@string/user_name"
-        app:layout_constraintStart_toStartOf="parent"
+        app:endIconDrawable="@drawable/gmail_com_icon"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toStartOf="@+id/end_vertical_guidline"
+        app:layout_constraintStart_toStartOf="@+id/startVerticalGuidline"
         app:layout_constraintTop_toBottomOf="@+id/firstname"
         tools:ignore="SpeakableTextPresentCheck">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/userName_edit"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             tools:layout_editor_absoluteX="-77dp"
             tools:layout_editor_absoluteY="5dp" />
@@ -97,13 +103,14 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
         android:hint="@string/password"
         app:layout_constraintEnd_toStartOf="@+id/confirm"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline"
         app:layout_constraintTop_toBottomOf="@+id/useMycurrentemail"
         tools:ignore="SpeakableTextPresentCheck">
 
@@ -119,13 +126,13 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/confirm"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:hint="@string/confirm"
         app:layout_constraintBottom_toBottomOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/end_vertical_guidline"
         app:layout_constraintStart_toEndOf="@+id/password"
         app:layout_constraintTop_toTopOf="@+id/password"
         app:layout_constraintVertical_bias="0.95"
@@ -145,15 +152,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/you_can_see_letters_numbers_periods"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <TextView
         android:id="@+id/use8Ormore"
         android:layout_width="373dp"
         android:layout_height="35dp"
+        android:layout_marginEnd="21dp"
         android:text="@string/use_8_or_more_characters_with_a_mix_of_letters_numbers_symbols"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
@@ -161,47 +171,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Use my current email insted"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/use_my_current_email_instead_textView"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline"
         app:layout_constraintTop_toBottomOf="@+id/youCanSee" />
 
     <TextView
         android:id="@+id/signInInstead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="sign in instead"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox_showpassword" />
+        android:layout_marginStart="16dp"
+        android:text="@string/sign_in_instead_textView"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/button_horizental_guidline"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline" />
 
     <Button
         android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="48dp"
-        android:text="NIXT"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/use8Ormore" />
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/next_button"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/signInInstead"
+        app:layout_constraintEnd_toEndOf="@id/end_vertical_guidline"
+        app:layout_constraintTop_toTopOf="@+id/signInInstead" />
 
     <CheckBox
         android:id="@+id/checkBox_showpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Show Password"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/show_password_checkBox"
+        app:layout_constraintStart_toStartOf="@id/startVerticalGuidline"
         app:layout_constraintTop_toBottomOf="@+id/use8Ormore" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="93dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastName"
-        app:srcCompat="@drawable/gmail_com_icon" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startVerticalGuidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="395dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_vertical_guidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/button_horizental_guidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="573dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
